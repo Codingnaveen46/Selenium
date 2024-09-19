@@ -1,4 +1,4 @@
-package org.example;
+package org.example.seleniumbasics;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -48,6 +48,9 @@ public class FirstSeleniumClass {
 
 
         // first selenium class
+
+
+
 
     }
 }
