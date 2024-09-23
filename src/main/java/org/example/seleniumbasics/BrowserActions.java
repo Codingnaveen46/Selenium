@@ -76,5 +76,7 @@ public class BrowserActions {
 //        20. Close all remaining windows
 
         driver.quit();
+
+
     }
 }
