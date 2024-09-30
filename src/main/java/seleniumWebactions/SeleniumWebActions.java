@@ -6,7 +6,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class SeleniumWebActions {
@@ -25,7 +28,7 @@ public class SeleniumWebActions {
     //Web tables
     //calendars
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
 //        1. Launch the Browser window (Browser = Chrome)
         WebDriver driver = new ChromeDriver();
@@ -138,6 +141,46 @@ public class SeleniumWebActions {
         s.deselectByIndex(0);
         s.selectByValue("ws");
         s.selectByVisibleText("web services");
+
+        //Checkbox
+        //click on the checkbox only after verifiying the element is selected already
+
+        boolean isChecked = element.isSelected();
+        if (!isChecked){
+            element.click();
+        }
+
+        // Radio button
+
+        element.click();
+
+        //verify whether image element is displayed
+        element.isDisplayed();
+        //verify the size of the image
+        int width = element.getSize().getWidth();
+        int heigt = element.getSize().getHeight();
+
+        //verify position of image
+        int xaxis = element.getLocation().getX();
+        int yaxix = element.getLocation().getY();
+
+        //verify color of image
+
+        String url = element.getAttribute("src");
+
+
+        //verify the image is valid
+        String url1 = element.getAttribute("src");
+        ImageIO.read(new File(url1)).getRGB(xaxis,yaxix);
+
+        //HYperlink
+        String link = element.getAttribute("href");
+        String link2 = driver.getCurrentUrl();
+        element.click();
+
+
+
+
 
 
     }
